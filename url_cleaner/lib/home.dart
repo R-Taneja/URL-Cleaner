@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'styles.dart';
 
 class Home extends StatelessWidget {
-  TextEditingController urlController = TextEditingController();
+  final TextEditingController urlController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -1,2 +1,2 @@
 # URL-Cleaner
-Clean URLs before sharing them.
+A tool to clean URLs before sharing them.

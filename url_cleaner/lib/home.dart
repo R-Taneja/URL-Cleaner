@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'styles.dart';
 
 class Home extends StatelessWidget {
+  TextEditingController urlController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +61,13 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.only(
                   left: 100.0, right: 100.0, bottom: 16.0),
               child: TextField(
+                controller: urlController,
+                decoration: InputDecoration(
+                  hintText: "Paste your link here",
+                  hintStyle: TextStyle(
+                    color: Color.fromARGB(115, 255, 255, 255),
+                  ),
+                ),
                 autofocus: true,
                 style: TextStyle(
                   color: Colors.white,
@@ -68,6 +77,7 @@ class Home extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // TODO: add functionality
+                String urlToClean = urlController.text;
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

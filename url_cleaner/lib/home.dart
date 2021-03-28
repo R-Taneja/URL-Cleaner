@@ -86,6 +86,7 @@ class _HomeState extends State<Home> {
                 autofocus: true,
                 style: TextStyle(
                   color: Colors.white,
+                  fontFamily: "PoppinsLight",
                 ),
               ),
             ),
@@ -117,6 +118,12 @@ class _HomeState extends State<Home> {
                           Text("Cleaned URL and copied it to the clipboard."),
                     ),
                   );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("URL is as clean as possible!"),
+                    ),
+                  );
                 }
               },
               child: Padding(
@@ -125,6 +132,7 @@ class _HomeState extends State<Home> {
                   "CLEAN",
                   style: TextStyle(
                     fontSize: 20.0,
+                    fontFamily: "PoppinsRegular",
                   ),
                 ),
               ),

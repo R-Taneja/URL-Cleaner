@@ -30,6 +30,19 @@ class _HomeState extends State<Home> {
       }
       cleanedURL = cleanedList.join();
     }
+    characters = cleanedURL.split('');
+    if (characters.contains("#")) {
+      List<String> cleanedList = [];
+      for (var char in characters) {
+        if (char != "#") {
+          cleanedList.add(char);
+        }
+        if (char == "#") {
+          break;
+        }
+      }
+      cleanedURL = cleanedList.join();
+    }
   }
 
   @override

@@ -10,6 +10,7 @@ class URLCleaner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "URL Cleaner",
       home: Home(),
     );
   }

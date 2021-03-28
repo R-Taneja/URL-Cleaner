@@ -15,6 +15,23 @@ class _HomeState extends State<Home> {
   final TextEditingController urlController = TextEditingController();
   String cleanedURL = "";
 
+  void cleanURL(String urlToClean) {
+    cleanedURL = urlToClean;
+    List<String> characters = urlToClean.split('');
+    if (characters.contains("?")) {
+      List<String> cleanedList = [];
+      for (var char in characters) {
+        if (char != "?") {
+          cleanedList.add(char);
+        }
+        if (char == "?") {
+          break;
+        }
+      }
+      cleanedURL = cleanedList.join();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,26 +109,8 @@ class _HomeState extends State<Home> {
             ),
             ElevatedButton(
               onPressed: () {
-                String urlToClean = urlController.text;
-                List<String> characters = urlToClean.split('');
-                if (characters.contains("?")) {
-                  List<String> cleanedList = [];
-                  for (var char in characters) {
-                    if (char != "?") {
-                      cleanedList.add(char);
-                    }
-                    if (char == "?") {
-                      print("Reached \"?\". Stopped cleaning.");
-                      break;
-                    }
-                  }
-                  cleanedURL = cleanedList.join();
-                  setState(() {
-                    urlController.text = cleanedURL;
-                  });
-                  Clipboard.setData(
-                    ClipboardData(text: cleanedURL),
-                  );
+                cleanURL(urlController.text);
+                if (cleanedURL != urlController.text) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content:
@@ -125,6 +124,12 @@ class _HomeState extends State<Home> {
                     ),
                   );
                 }
+                setState(() {
+                  urlController.text = cleanedURL;
+                });
+                Clipboard.setData(
+                  ClipboardData(text: cleanedURL),
+                );
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

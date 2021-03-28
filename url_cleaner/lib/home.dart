@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
       ScaffoldMessenger.of(context).showSnackBar(
         new SnackBar(
           content: new Text(
-              "Welcome! URL Cleaner isn't optimized for mobile yet, but support is coming soon."),
+              "Welcome! If you're using a mobile device, a more responsive UI is coming soon."),
         ),
       );
     });

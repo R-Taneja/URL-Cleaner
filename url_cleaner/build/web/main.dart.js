@@ -53237,7 +53237,7 @@ return new M.rJ(T.a1X(T.aeQ(H.c([q,new T.ev(C.ww,o,s),p,new T.ev(C.wy,new Z.to(t
 Y.Y6.prototype={
 $0:function(){var s=null,r=this.a.c.X(t.Cu)
 r.toString
-r.f.rS(N.Uy(s,s,s,s,L.e4("Welcome! URL Cleaner isn't optimized for mobile yet, but support is coming soon.",s,s,s,s,s,s),C.lO,s,s,s,s,s,s,s))},
+r.f.rS(N.Uy(s,s,s,s,L.e4("Welcome! If you're using a mobile device, a more responsive UI is coming soon.",s,s,s,s,s,s),C.lO,s,s,s,s,s,s,s))},
 $S:1}
 Y.Y3.prototype={
 $0:function(){$.ip().iR("open",["https://twitter.com/jsngr"])},

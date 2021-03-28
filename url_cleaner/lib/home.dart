@@ -1,4 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
+import 'dart:async';
 import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
@@ -12,6 +13,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    new Future<Null>.delayed(Duration.zero, () {
+      ScaffoldMessenger.of(context).showSnackBar(
+        new SnackBar(
+          content: new Text(
+              "Welcome! URL Cleaner isn't optimized for mobile yet, but support is coming soon."),
+        ),
+      );
+    });
+    super.initState();
+  }
+
   final TextEditingController urlController = TextEditingController();
   String cleanedURL = "";
 

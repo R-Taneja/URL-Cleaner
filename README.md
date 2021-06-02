@@ -1,2 +1,2 @@
 # URL-Cleaner
-A tool to clean URLs before sharing them.
+A tool built with Flutter to clean URLs before sharing them.
